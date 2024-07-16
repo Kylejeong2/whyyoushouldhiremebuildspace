@@ -9,13 +9,20 @@ export default function Home() {
       </div>
 
       <div>
-        This is why you should hire me as a Buildspace Intern this fall!
+        I'm 19 and a rising junior at UCLA studying math and cs. 
+      </div>
+
+      <div>
+        This is why you should hire me as a Buildspace Intern (ai or full-stack) this fall!
       </div>
 
       <div>
         I LOVE BUILDING!
 
-        This is me building legos and getting featured in the lego magazine.
+        Building is literally my passion, and it's something that I'll do for the rest of my life. 
+
+        This is me building Legos and getting featured in the lego magazine for winning a building competition.
+        
         Here are the PC computers I've built:
         
         My favorite programming projects: 
@@ -48,6 +55,22 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center">
         <h2>Farza already loves me: </h2>
         <Tweet id="1808350569486270797"/>
+      </div>
+
+      <div>
+        Please contact me here: 
+
+        email
+        website
+        linkedin
+        twitter
+
+      </div>
+
+      <div>
+        Thanks to the Buildspace team for a great s5.
+
+        list buildspace team
       </div>
     </main>
   );
