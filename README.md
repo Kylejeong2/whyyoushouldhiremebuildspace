@@ -1,3 +1,10 @@
+# Buildspace
+
+Hey team, just whipped up this webpage really quick because I love buildspace and would love to be a part of the fall internship cohort.
+
+my twitter: https://x.com/kylejeong21
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

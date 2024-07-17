@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel"
 import ImageModal from '@/components/ImageModal';
 import { useRef, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const [modalImage, setModalImage] = React.useState<string | null>(null);
@@ -55,18 +56,24 @@ export default function Home() {
 
   return (
     <main className="flex flex-col 2xl:flex-row h-screen items-center justify-between text-white font-manrope bg-black font-extrabold tracking-tighter">
-      <div className="w-full 2xl:w-1/4 bg-black text-white p-8 flex 2xl:flex-col flex-row justify-between">
-        <div>
-          <h1 className="text-5xl 2xl:text-7xl font-bold mb-4">hey there, i'm kyle jeong.👋</h1>
-          <p className="text-gray-400 text-lg 2xl:text-xl">this is why you should hire me as a buildspace intern (ai or full-stack) this fall!</p>
-        </div>
-          
-          <div className="hidden lg:block">
+      <div className="h-full w-full 2xl:w-1/4 bg-black text-white p-8 flex flex-col justify-between">
+        <div className="hidden lg:block">
             picture 
           </div>
-          
+        <div className="mt-auto">
+          <h1 className="text-5xl 2xl:text-7xl font-bold mb-4">hey there, i'm kyle.</h1>
+          <p className="text-gray-400 text-lg font-medium 2xl:text-xl">this is why you should hire me as a buildspace intern (ai or full-stack) this fall!</p>
+          <div className="py-4 flex justify-center space-x-4">
+            <Button variant="outline" className="font-bold h-16 text-lg w-auto rounded-none text-black hover:bg-black hover:text-white transition-colors duration-200">
+              github repo for this site
+            </Button>
+            <Button className="h-16 w-auto font-bold bg-black text-lg rounded-none text-white border-solid border-white border-2 hover:bg-white hover:text-black transition-colors duration-200">
+              cue background music
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="w-full 2xl:w-3/4 h-screen overflow-y-auto p-4 2xl:p-8 bg-gray-950">
+      <div className="w-full 2xl:w-3/4 h-screen overflow-y-auto p-4 2xl:p-8 bg-gray-950 border-l-2 border-l-gray-800">
 
       <div className="space-y-8 text-center p-20">
         <div className="mb-4">
@@ -104,17 +111,25 @@ export default function Home() {
                 here are some pc computers I've built:
                   <div className="flex flex-row items-center justify-center space-x-4 mt-4">
                     <Image 
-                      src="/pc1.jpg" 
+                      src="/pc1.jpeg" 
                       alt="PC Build 1" 
-                      width={300} 
+                      width={350} 
                       height={300} 
                       className="rounded-lg shadow-lg cursor-pointer" 
                       onClick={() => openModal("/pc1.jpg")}
                     />
                     <Image 
-                      src="/pc2.jpg" 
+                      src="/pc2.jpeg" 
                       alt="PC Build 2" 
-                      width={300} 
+                      width={350} 
+                      height={300} 
+                      className="rounded-lg shadow-lg cursor-pointer" 
+                      onClick={() => openModal("/pc2.jpg")}
+                    />
+                    <Image 
+                      src="/pc3.jpeg" 
+                      alt="PC Build 2" 
+                      width={350} 
                       height={300} 
                       className="rounded-lg shadow-lg cursor-pointer" 
                       onClick={() => openModal("/pc2.jpg")}
@@ -124,8 +139,9 @@ export default function Home() {
               </CarouselItem>
               <CarouselItem className="p-10">
                 <div className="mb-8 text-center font-extrabold text-xl">
-                  my favorite programming projects:
+                  some cool projects i've shipped during n&w s5:
                   <div className="flex flex-row items-center justify-center space-x-4 mt-4">
+                    {/* change to github repo links */}
                     <Image 
                       src="/project1.png" 
                       alt="Project 1" 
@@ -178,18 +194,38 @@ export default function Home() {
         <h1 className="text-6xl font-bold p-6">i'm relentless in my pursuit.</h1>
         <p className="text-gray-400 text-2xl">if i want something done, i'll get it done</p>
         <p className="text-gray-400 text-xl">here's clip of me wrestling through a tough point deficit + me fighting through a 425 squat.</p>
+        <div className="flex justify-between mt-4">
+          {['squat.mov', 'wrestling.mov'].map((src, index) => (
+            <div key={src} className="h-1/2 px-2 rounded-lg">
+              <video
+                ref={(el) => { videoRefs.current[index] = el; }}
+                src={src}
+                className="w-full h-auto cursor-pointer rounded-lg" 
+                loop
+                muted
+                playsInline
+                onClick={() => toggleMute(index)}
+              />
+            </div>
+          ))}
+        </div>
 
-        <div className="mt-2">(wrestling clip, 425 squat)</div>
       </div>
 
       <div className="text-4xl mb-4 text-center">
         i want to help build the future of AI and help other people build what they care about. 
-        <div className="mt-2">buildspace n&w has had a huge affect on me these past weeks and i want to help spread it to everyone as much as possible</div>
+        <div className="text-gray-400 text-xl">buildspace n&w has had a huge affect on me these past weeks and i want to help spread it to everyone as much as possible</div>
       </div>
 
       <div className="text-4xl mb-4 text-center">
-        this is what i'd start working on my first day at buildspace:
-        video of me explaining how I could help improve sage full-stack / AI side
+        <div className="flex flex-row">
+          <div className="w-1/2">
+            this is what i'd work on my first day at buildspace:
+          </div>
+          <div className="w-1/2">
+            video
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col items-center justify-center mb-8">
@@ -204,7 +240,6 @@ export default function Home() {
 
         shoot confetti and play buildspace grant song
         <ul className="list-disc list-inside mt-2">
-          <li>List Buildspace team</li>
           farza josh amit stavan jeffrey dante aiden adrianna
         </ul>
       </div>

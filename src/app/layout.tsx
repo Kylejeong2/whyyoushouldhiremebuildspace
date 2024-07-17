@@ -5,8 +5,13 @@ import "./globals.css";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Please Hire Me at Buildspace",
+  title: "i ❤️ buildspace",
   description: "Buildspace Internship 2024",
+  icons: {
+    icon:['/favicon.ico?v=4'],
+    apple:['apple-touch-icon.png?v=4'],
+    shortcut:['apple-touch-icon.png']
+  }
 };
 
 export default function RootLayout({
