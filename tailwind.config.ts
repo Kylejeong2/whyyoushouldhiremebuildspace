@@ -75,6 +75,9 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  fontFamily: {
+    sans: ['Manrope', 'sans-serif'],
+  },
 } satisfies Config
-
+  
 export default config
