@@ -218,8 +218,8 @@ export default function Home() {
 
       <div className="text-2xl text-center">
         <h1 className="text-6xl font-bold p-6">i&apos;m relentless in my pursuit (of literally everything).</h1>
-        <p className="text-gray-400 text-2xl">if i want something done, i&apos;ll get it done</p>
-        <p className="text-gray-400 text-xl">here&apos;s clip of me wrestling through a tough takedown (jiu jitsu jeff knows) + me fighting through a 425 squat.</p>
+        <p className="text-gray-400 text-2xl">if i want something done, i&apos;ll get it done + i&apos;m a super hard worker.</p>
+        <p className="text-gray-400 text-xl">here&apos;s clip of me wrestling through a tough takedown (jiu-jitsu jeff can appreciate) + me pushing through a 425 squat.</p>
         <div className="flex justify-between mt-4">
           {['squat.mov', 'wrestling.mov'].map((src, index) => (
             <div key={src} className="w-1/2 px-2 rounded-lg">
