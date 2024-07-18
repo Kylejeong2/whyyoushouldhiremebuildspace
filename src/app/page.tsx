@@ -268,59 +268,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center mb-8">
         <h2 className="text-4xl font-bold p-6 mb-2">this is just a bonus, but farza already loves me:</h2>
         <Tweet id="1808350569486270797"/>
-      </div>
-
-      {/* <div className="text-4xl mb-4 text-center">my s5 journey behind the scenes.</div>
-      <div className="flex justify-center">
-          <Carousel className="w-5/6 bg-gray-600 rounded-lg max-w-6xl">
-            <CarouselContent>
-              <CarouselItem className="p-8 justify-between">
-              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
-                <iframe 
-                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
-                  className="w-full h-full"
-                />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="p-8 justify-between">
-                
-              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
-                <iframe 
-                  src="https://www.loom.com/embed/cabbd74cb4dc4b7f92b363d2a7f425fd?sid=80a9266b-a40b-4c9d-9dea-d74fbe3bbdda" 
-                  className="w-full h-full"
-                />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="p-8 justify-between">
-              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
-                <iframe 
-                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
-                  className="w-full h-full"
-                />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="p-8 justify-between">
-              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
-                <iframe 
-                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
-                  className="w-full h-full"
-                />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="p-8 justify-between">
-              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
-                <iframe 
-                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
-                  className="w-full h-full"
-                />
-              </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="bg-black"/>
-            <CarouselNext className="bg-black"/>
-          </Carousel>
-        </div> */}
-      
+      </div>     
 
       <div className="text-2xl mb-4 text-center">
         thanks to the buildspace team for a great s5.
