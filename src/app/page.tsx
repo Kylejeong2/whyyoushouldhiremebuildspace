@@ -41,13 +41,15 @@ export default function Home() {
       },
       { threshold: 0.5 }
     );
-
-    videoRefs.current.forEach((video) => {
+  
+    const currentVideoRefs = videoRefs.current;
+  
+    currentVideoRefs.forEach((video) => {
       if (video) observer.observe(video);
     });
-
+  
     return () => {
-      videoRefs.current.forEach((video) => {
+      currentVideoRefs.forEach((video) => {
         if (video) observer.unobserve(video);
       });
     };
@@ -79,7 +81,7 @@ export default function Home() {
             />
           </div>
         <div className="mt-auto">
-          <h1 className="text-7xl font-bold mb-4">hey there, i'm kyle.</h1>
+          <h1 className="text-7xl font-bold mb-4">hey there, i&apos;m kyle.</h1>
           <p className="text-gray-400 text-lg font-medium 2xl:text-xl">this is why you should hire me as a buildspace intern (ai or full-stack) this fall!</p>
           <div className="py-4 flex justify-center space-x-4">
             <Button 
@@ -103,7 +105,7 @@ export default function Home() {
       <div className="space-y-8 text-center p-20">
         <div className="mb-4">
           <h1 className="text-6xl font-bold p-6">i love building!</h1>
-          <p className="text-gray-400 text-xl">whether it be legos, computers, or programming projects; i love building stuff and it's something that i'll do for the rest of my life. </p>
+          <p className="text-gray-400 text-xl">whether it be legos, computers, or programming projects; i love building stuff and it&apos;s something that i&apos;ll do for the rest of my life. </p>
         </div>
         <div className="flex justify-center">
           <Carousel className="w-full bg-gray-600 rounded-lg max-w-6xl">
@@ -133,7 +135,7 @@ export default function Home() {
               </CarouselItem>
               <CarouselItem className="p-8 justify-between">
               <div className="mb-8 text-center justify-between font-extrabold text-xl">
-                here are some pc computers I've built:
+                here are some pc computers I&apos;ve built:
                   <div className="flex flex-row items-center justify-center space-x-4 mt-4">
                     <Image 
                       src="/pc1.jpeg" 
@@ -164,7 +166,7 @@ export default function Home() {
               </CarouselItem>
               <CarouselItem className="p-8 justify-between">
                 <div className="mb-8 text-center justify-between font-extrabold text-xl">
-                  <h1>some cool projects i've shipped during n&w s5:</h1>
+                  <h1>some cool projects i&apos;ve shipped during n&w s5:</h1>
                   <div className="flex flex-row items-center justify-center space-x-4 mt-4">
                     <Image 
                       src="/hackletter.png" 
@@ -195,7 +197,7 @@ export default function Home() {
 
       <div className="text-2xl mb-4 text-center">
         <h1 className="text-6xl font-bold p-6">i work and learn fast. (click videos to unmute)</h1>
-        <p className="text-gray-400 text-xl">this is me learning to cook with my friend, learning to play the piano, and learning to do a backflip (it's sick i know). </p>
+        <p className="text-gray-400 text-xl">this is me learning to cook with my friend, learning to play the piano, and learning to do a backflip (it&apos;s sick i know). </p>
 
         <div className="flex justify-between mt-4">
           {['cooking.mov', 'piano.mov', 'backflip.mov'].map((src, index) => (
@@ -215,9 +217,9 @@ export default function Home() {
       </div>
 
       <div className="text-2xl text-center">
-        <h1 className="text-6xl font-bold p-6">i'm relentless in my pursuit (of literally everything).</h1>
-        <p className="text-gray-400 text-2xl">if i want something done, i'll get it done</p>
-        <p className="text-gray-400 text-xl">here's clip of me wrestling through a tough takedown (jiu jitsu jeff knows) + me fighting through a 425 squat.</p>
+        <h1 className="text-6xl font-bold p-6">i&apos;m relentless in my pursuit (of literally everything).</h1>
+        <p className="text-gray-400 text-2xl">if i want something done, i&apos;ll get it done</p>
+        <p className="text-gray-400 text-xl">here&apos;s clip of me wrestling through a tough takedown (jiu jitsu jeff knows) + me fighting through a 425 squat.</p>
         <div className="flex justify-between mt-4">
           {['squat.mov', 'wrestling.mov'].map((src, index) => (
             <div key={src} className="w-1/2 px-2 rounded-lg">
@@ -243,7 +245,7 @@ export default function Home() {
       <div className="text-4xl mb-4 text-center">
         <div className="flex flex-row">
           <div className="w-1/2">
-            this is what i'd work on my first day at buildspace:
+            this is what i&apos;d work on my first day at buildspace:
           </div>
           <div className="w-1/2">
             video
@@ -260,7 +262,7 @@ export default function Home() {
           className="rounded-lg shadow-lg cursor-pointer" 
           onClick={() => openModal("/gmap.png")}
         />
-        i'm also based near sf 📍(~40 mins away)
+        i&apos;m also based near sf 📍(~40 mins away)
       </div>
 
       <div className="flex flex-col items-center justify-center mb-8">
