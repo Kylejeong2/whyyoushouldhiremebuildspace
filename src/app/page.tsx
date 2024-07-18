@@ -10,9 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import ImageModal from '@/components/ImageModal';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { Loader } from '@googlemaps/js-api-loader';
+import dynamic from 'next/dynamic';
+import { Ghost } from "lucide-react";
+
+const Confetti = dynamic(() => import('react-confetti'), { ssr: false });
 
 export default function Home() {
   // for image popup
@@ -55,6 +58,13 @@ export default function Home() {
       videoRefs.current[index]!.muted = !videoRefs.current[index]!.muted;
     }
   };
+
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  const handleConfettiClick = useCallback(() => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 5000); // Confetti disappears after 5 seconds
+  }, []);
 
   return (
     <main className="flex flex-col lg:flex-row h-screen items-center justify-between text-white font-manrope bg-black font-extrabold tracking-tighter">
@@ -258,19 +268,85 @@ export default function Home() {
         <Tweet id="1808350569486270797"/>
       </div>
 
-      <div className="text-4xl mb-4 text-center">my s5 journey behind the scenes.</div>
+      {/* <div className="text-4xl mb-4 text-center">my s5 journey behind the scenes.</div>
+      <div className="flex justify-center">
+          <Carousel className="w-5/6 bg-gray-600 rounded-lg max-w-6xl">
+            <CarouselContent>
+              <CarouselItem className="p-8 justify-between">
+              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
+                <iframe 
+                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
+                  className="w-full h-full"
+                />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="p-8 justify-between">
+                
+              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
+                <iframe 
+                  src="https://www.loom.com/embed/cabbd74cb4dc4b7f92b363d2a7f425fd?sid=80a9266b-a40b-4c9d-9dea-d74fbe3bbdda" 
+                  className="w-full h-full"
+                />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="p-8 justify-between">
+              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
+                <iframe 
+                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
+                  className="w-full h-full"
+                />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="p-8 justify-between">
+              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
+                <iframe 
+                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
+                  className="w-full h-full"
+                />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="p-8 justify-between">
+              <div className="mb-8 h-96 text-center justify-between font-extrabold text-xl">
+                <iframe 
+                  src="https://www.loom.com/embed/5820716da568462ab34b7c29da5df9a4?sid=da032e22-09fd-435a-8014-afd97b4e9470" 
+                  className="w-full h-full"
+                />
+              </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="bg-black"/>
+            <CarouselNext className="bg-black"/>
+          </Carousel>
+        </div> */}
       
 
       <div className="text-2xl mb-4 text-center">
         thanks to the buildspace team for a great s5.
 
-        shoot confetti and play buildspace grant song
+        <Button 
+          onClick={handleConfettiClick}
+          variant="ghost"
+          className="font-bold h-16 text-lg w-1/2 rounded-none text-black hover:bg-black hover:text-white transition-colors duration-200"
+        >
+          surprise button
+        </Button>
         <ul className="list-disc list-inside mt-2">
-          farza josh amit stavan jeffrey dante aiden adrianna
+          appreciate you all:
+          farza, josh, amit, stavan, jeffrey, dante, aiden, and adrianna
         </ul>
       </div>
       </div>
       
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={500}
+          style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+        />
+      )}
+
       {modalImage && (
         <ImageModal src={modalImage} alt="Enlarged view" onClose={closeModal} />
       )}  {/* need this for img enlargement */}
