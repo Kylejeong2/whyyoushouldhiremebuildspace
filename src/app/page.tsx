@@ -13,7 +13,6 @@ import ImageModal from '@/components/ImageModal';
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
-import { Ghost } from "lucide-react";
 
 const Confetti = dynamic(() => import('react-confetti'), { ssr: false });
 
@@ -246,9 +245,15 @@ export default function Home() {
         <div className="flex flex-row">
           <div className="w-1/2">
             this is what i&apos;d work on my first day at buildspace:
+            <br></br>
+            &rarr; {/* Left-pointing arrow */}
           </div>
           <div className="w-1/2">
-            video
+            <iframe
+              src="https://www.loom.com/embed/9caf01406c1145a19053a3c12b92fc54?sid=9a2b2179-9f33-45f7-a3b6-579c8a9a734e"
+              allowFullScreen
+              className="w-full aspect-video rounded-lg"
+            ></iframe>
           </div>
         </div>
       </div>
